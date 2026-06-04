@@ -1,0 +1,23 @@
+# AutoGTM ships the framework, never a company's data.
+# A real deployment's brain/ and campaign data are PRIVATE — keep them out of any public fork.
+
+# Environment / secrets
+.env
+.env.*
+*.key
+
+# Live brain content (company-specific). The folder structure + .gitkeep stay tracked;
+# real winning messages, replies, ICP intel, and objections do not belong in this public repo.
+brain/**/*.md
+!brain/README.md
+!brain/**/.gitkeep
+
+# Real campaign data (keep the header row + comments, ignore logged runs)
+# (results.tsv is tracked as a template; a private deployment should gitignore it.)
+
+# OS / tooling
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+.venv/

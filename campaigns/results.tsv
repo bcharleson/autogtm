@@ -1,0 +1,5 @@
+commit	hypothesis	audience	dimension	sends	positive_reply_quality	reply_rate	status	notes
+# append-only experiment log. one row per campaign run. status = keep | discard | skip.
+# dimension = the single thing changed this run: audience | message | cta.
+# example (delete when you log your first real run):
+# a1b2c3d	cost-savings hook beats compliance hook	treasury-leads	message	120	0.058	0.092	keep	T3 cluster: "what are the costs?" x4
