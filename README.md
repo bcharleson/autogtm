@@ -73,12 +73,25 @@ deliverables/
 
 ---
 
-## Relationship to crystallized-intelligence
+## Works with crystallized-intelligence
 
-AutoGTM's `brain/` is [crystallized-intelligence](https://github.com/bcharleson/crystallized-intelligence)-
-compatible. That project is the framework for *compiling* domain expertise into agent-readable
-layers; AutoGTM is the framework for *generating and scoring* the GTM experiments that fill it.
-Use them together or use AutoGTM's brain on its own — a plain folder of markdown works fine.
+AutoGTM's `brain/` is **[crystallized-intelligence](https://github.com/bcharleson/crystallized-intelligence)-compatible**
+out of the box. The two frameworks are designed to pair:
+
+| | crystallized-intelligence | AutoGTM |
+|---|---|---|
+| Job | **Compiles** expertise into agent-readable layers (seed → principles → knowledge → sources → raw) | **Generates and scores** the GTM experiments that fill those layers |
+| Direction | Structures what you already know | Discovers what actually converts |
+| Role in the pair | The brain's *format* | The brain's *feedstock* |
+
+**How they connect:** every positive reply AutoGTM scores becomes first-party signal. Run it through
+crystallized-intelligence and it compiles into the `brain/`'s seed/principles layers — so the operating
+agent reads a *crystallized* brain (tight, load-bearing) instead of a raw pile of replies. AutoGTM keeps
+the loop honest; crystallized-intelligence keeps the brain compact. Each makes the other sharper.
+
+You don't have to use both — AutoGTM's `brain/` works as a plain folder of markdown. But if you want the
+brain to stay lean as it grows, point crystallized-intelligence at it. See its
+[repo](https://github.com/bcharleson/crystallized-intelligence) for the layer spec and the `crystallize` tooling.
 
 ---
 
