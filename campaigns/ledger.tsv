@@ -1,0 +1,6 @@
+identity_key	experiment	channel	sent_at	delivered	reply_tier	silent_tier	weight	notes
+# one row per attempt. this is how email / linkedin / dms collapse to one person.
+# identity_key: email (lowercase) | linkedin URL (canonical) | platform:handle | company domain
+# merge rows when you learn a second identifier for the same human — do not double-count
+# reply_tier = T0|T1|T2|T3 (blank if none). silent_tier = S1|S2|S3 (blank if none)
+# weight = max(reply, silent) per eval.md. delivered = true|false

@@ -1,13 +1,15 @@
-# Loop — ICP / Audience
+# Loop — ICP / audience
 
-Optimizes `positive_reply_quality` by varying the **audience**, holding the message fixed.
+Optimizes `attributed_intent_quality` by varying the **audience**, holding message and channel
+fixed.
 
-**Fixed eval:** positive-reply quality (same rubric — never changes).
-**Modifiable:** which segment / firmographic slice the campaign targets, signal filters.
-**Not modifiable:** the message (that's `loop-outbound`), the eval rubric.
+**Fixed eval:** [`eval.md`](../eval.md).
+**Modifiable:** segment / firmographic slice, signal filters.
+**Not modifiable:** the message (`loop-outbound`), the channel (`loop-channel`), the eval.
 
-**Goal:** discover which segments actually produce T3 replies, and which signals predict them.
-Hold a known-good message constant, run it against segment A vs. segment B, compare quality.
+**Goal:** which segments produce T3 *or* S3, and which signals predict them. A segment that
+does not reply but books from the site is a winning audience — do not discard it for a quiet
+inbox.
 
-Log to `../campaigns/results.tsv` with `dimension = audience`. Promote findings into
-`../brain/icp-patterns/` — especially any signal that strongly predicts a hot (T3) reply.
+Log with `dimension = audience`. Promote findings into `brain/icp-patterns/` (`ICP-`),
+including signals that predict silent conversion.

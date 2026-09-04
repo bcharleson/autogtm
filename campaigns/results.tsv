@@ -1,5 +1,7 @@
-commit	hypothesis	audience	dimension	sends	positive_reply_quality	reply_rate	status	notes
-# append-only experiment log. one row per campaign run. status = keep | discard | skip.
-# dimension = the single thing changed this run: audience | message | cta.
-# example (delete when you log your first real run):
-# a1b2c3d	cost-savings hook beats compliance hook	treasury-leads	message	120	0.058	0.092	keep	T3 cluster: "what are the costs?" x4
+commit	hypothesis	audience	channel	dimension	eligible_attempts	attributed_intent_quality	reply_rate	silent_serve_rate	delivery_rate	negative_rate	status	notes
+# append-only. one row per experiment. status = keep | discard | skip | pending | crash
+# dimension = the single thing changed: audience | message | cta | channel
+# channel = email | linkedin | dm
+# attributed_intent_quality is the ONLY metric that decides keep/discard (see eval.md)
+# pending = sent, window still open. finalize when attribution_window_days have passed.
+# leave lagging fields blank until known. cross-reference brain entities by ID in notes.
